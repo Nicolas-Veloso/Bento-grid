@@ -12,6 +12,7 @@ body {
     line-height: 1;
     place-content: center;
     display: grid;
+    background-color: #f2f2f2;
 }
 
 :root {
@@ -51,9 +52,9 @@ img {
 
 .container {
     background-color: #f2f2f2;
+    margin: auto;
     display: grid;
     max-width: 1000px;
-    margin: 1rem;
     gap: 25px;
     grid-auto-columns: 180px;
     grid-auto-rows: 38px;
@@ -200,5 +201,107 @@ img {
     gap: .5rem;
 }
 
+@media screen and (max-width: 768px){
+    .container {
+        display: grid;
+        max-width: 500px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        'box-1 box-2'
+        'box-3 box-4'
+        'box-5 box-6'
+        'box-7 box-8';
+    }
 
+    .container .box:nth-child(3) img {
+        height: 175px;
+    }
+
+    .container .box:nth-child(8) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container {
+        display: grid;
+        max-width: 500px;
+        padding: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.3fr .75fr .87fr 1.85fr 1.5fr .8fr 1fr 1.35fr;
+        grid-template-areas: 
+        'box-2' 'box-5'
+        'box-6' 'box-3'
+        'box-8' 'box-7'
+        'box-1' 'box-4';
+    }
+
+    .xlg-text {
+        font-size: 3.5rem;
+    }
+
+    .lg-text {
+        font-size: 2.2rem;
+    }
+
+    .mid-text {
+        font-size: 1.7rem;
+    }
+
+    .sm-text {
+        font-size: 1.4rem;
+    }
+
+    .container .box:nth-child(2) {
+        padding: 0 1.5rem;
+    }
+
+    .container .box:nth-child(2) img {
+        width: 200px;
+    }
+
+    .container .box:nth-child(5) p {
+        padding-top: 3rem;
+    }
+
+    .container .box:nth-child(6) img {
+        padding-right: 6.5rem;
+    }
+
+    .container .box:nth-child(3) img {
+        height: 299px;
+    }
+
+    .container .box:nth-child(3) p {
+        text-align: center;
+    } 
+
+    .container .box:nth-child(8) {
+        padding: 1rem 2.7rem;
+    }
+
+    .container .box:nth-child(8) p {
+        text-align: center;
+        padding-top: 1.5rem;
+    }
+
+    .container .box:nth-child(7) img {
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .container .box:nth-child(7) span {
+        margin-bottom: 20px;
+    }
+
+    .container .box:nth-child(1) img {
+        width: 235px;
+    }
+
+    .container .box:nth-child(4) img {
+        padding-right: 6rem;
+    }
+}
 
